@@ -1,0 +1,15 @@
+name: Hello world # actions 이름
+
+on: [push] # git push라는 event가 일어날 때 jobs 이하 코드가 실행2
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest # action 이 일어날때 구동되는 컴퓨터 >> 현재 ubuntu
+    
+    steps: # 실제로 벌어지는 일들
+    #- uses: actions/checkout@v1
+    - name: Run pwd # step의 이름
+      run: pwd # 실제 step에서 하는 행동
+    - name: Run ls -al
+      run: ls -al
