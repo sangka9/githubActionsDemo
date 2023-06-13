@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: "context"
+      env:
+        COMMIT_ID: ${{ github.sha }} # $뒤에 파일명은 환경변수를 가져와서 씀
+      run: echo "Commit id ==> $COMMIT_ID"
